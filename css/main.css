@@ -19,6 +19,8 @@ body {
 
 a {
   text-decoration: none;
+  -webkit-transition: ease-in-out 0.15s;
+  transition: ease-in-out 0.15s;
 }
 
 .main_container {
@@ -62,6 +64,10 @@ a {
 .navbar .navigation a {
   color: var(--background_color);
   padding: 0 auto;
+}
+
+.navbar .navigation a:hover {
+  color: var(--secondary_color);
 }
 
 .top_container {
@@ -140,6 +146,9 @@ a {
   border-right: none;
   margin-top: 3em;
   margin-bottom: 3em;
+  color: var(--main_color);
+  -webkit-transition: ease-in-out 0.15s;
+  transition: ease-in-out 0.15s;
 }
 
 .items_container .item .image_box {
@@ -153,7 +162,6 @@ a {
 }
 
 .items_container .item .text_box {
-  color: var(--main_color);
   margin-left: 13%;
   margin-right: 13%;
 }
@@ -176,6 +184,13 @@ a {
 .items_container .item .text_box .bottom_text .work_type {
   float: right;
   margin-right: 0;
+}
+
+.items_container .item:hover {
+  color: var(--secondary_color);
+  border-color: var(--secondary_color);
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 
 .footer {
@@ -202,6 +217,10 @@ a {
   text-decoration: underline;
 }
 
+.footer .text_box .secondary_text a:hover {
+  color: var(--secondary_color);
+}
+
 .footer .navigation {
   margin: 4em auto;
   width: 85%;
@@ -215,5 +234,9 @@ a {
 
 .footer .navigation a {
   color: var(--main_color);
+}
+
+.footer .navigation a:hover {
+  color: var(--secondary_color);
 }
 /*# sourceMappingURL=main.css.map */

@@ -19,6 +19,7 @@ body{
 
 a{
     text-decoration: none;
+    transition: ease-in-out 0.15s;
 }
 
 .main_container{
@@ -51,6 +52,9 @@ a{
         color: var(--background_color);
         padding: 0 auto;
         };
+        a:hover{
+            color: var(--secondary_color);
+        }
         margin: 0 auto;
     }
 }
@@ -125,6 +129,8 @@ a{
         border-right: none;
         margin-top: 3em;
         margin-bottom: 3em;
+        color: var(--main_color);
+        transition: ease-in-out 0.15s;
 
         .image_box{
             width: 100%;
@@ -136,7 +142,6 @@ a{
             }
         }
         .text_box{
-            color: var(--main_color);
             margin-left: 13%;
             margin-right: 13%;
             .title{
@@ -158,6 +163,11 @@ a{
             }
         }
     }
+    .item:hover{
+        color: var(--secondary_color);
+        border-color: var(--secondary_color);
+        transition-timing-function: ease-in-out;
+    }
 }
 
 .footer{
@@ -177,6 +187,9 @@ a{
                 color: var(--main_color);
                 text-decoration: underline;
             }
+            a:hover{
+            color: var(--secondary_color);
+            }
         }
     }
     .navigation{
@@ -185,8 +198,12 @@ a{
         display: flex;
         justify-content: space-between;
         a{
-            color: var(--main_color)
+            color: var(--main_color);
+        }
+        a:hover{
+            color: var(--secondary_color);
         }
 
     }
+    
 }
