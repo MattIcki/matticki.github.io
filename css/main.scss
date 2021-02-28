@@ -128,6 +128,13 @@ a{
 .items_container{
     width: 100%;
     .item{
+        a{
+            text-decoration: none;
+            color: var(--main_color)
+        }
+        a:hover{
+            color: var(--secondary_color)
+        }
         border: 3px var(--main_color) solid;
         border-style: solid;
         border-left: none;
@@ -337,11 +344,16 @@ a{
         }
         .invisible_box{
             .container{
-                margin-top: 40vh;
+                margin-top: 38vh;
+                .big_text{
+                    font-size: 16em !important;
+                }
             }
         }
     }
-
+    .items_container{
+        margin-top: -12em;
+    }
     .item{
         margin-left: 15vw;
         margin-right: 15vw;
