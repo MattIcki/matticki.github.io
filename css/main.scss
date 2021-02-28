@@ -7,6 +7,14 @@
     --gradient_color_b: #A21212;
 }
 
+.preload{
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
 img{
     max-width: 100%;
 }
