@@ -266,7 +266,7 @@ a{
             left: 25%;
             transform: translate(-50%, -50%);
             position: absolute;
-            width: 40em;
+            width: 30em;
         }
     }
         
@@ -275,24 +275,31 @@ a{
 
 @media only screen and (min-width: 910px){
     .item{
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 7vw;
+        margin-right: 7vw;
         border-right-style: solid !important;
         border-left-style: solid !important;
         .container{
-            height: 44em;
+            height: 34em;
             img{
                 max-width: none !important;
                 max-height:none;
-                width: 40em !important;
+                width: 30em !important;
 
             }
         }
 
     }
+    .footer{
+        margin-left: 7vw;
+        margin-right: 7vw;
+    }
 }
 
 @media only screen and (min-width: 1240px){
+    body{
+        font-size: 0.7vw;
+    }
     .navbar{
         display: inline-block;
         .logo{
@@ -338,6 +345,13 @@ a{
     .item{
         margin-left: 15vw;
         margin-right: 15vw;
+        .container{
+            height: 44em;
+            img{
+                width: 40em !important;
+            }
+        }
+
     }
     .footer{
         margin-left: 15vw;
