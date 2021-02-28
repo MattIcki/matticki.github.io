@@ -20,7 +20,10 @@ body{
 a{
     text-decoration: none;
     transition: ease-in-out 0.15s;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
 
 .main_container{
     top: 0;

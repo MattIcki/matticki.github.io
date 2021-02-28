@@ -21,6 +21,7 @@ a {
   text-decoration: none;
   -webkit-transition: ease-in-out 0.15s;
   transition: ease-in-out 0.15s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .main_container {
