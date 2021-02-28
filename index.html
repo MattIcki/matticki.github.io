@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
     <title>Matt Iwicki</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 <body>
+    <script>
+        AOS.init({
+            duration: 500,
+            easing: "ease-in-out"
+        });
+    </script>
+
     <div class="main_container">
         <div class="navbar">
             <a href="index.html" class="logo">Matt Iwicki</a>
@@ -37,9 +47,9 @@
             </div>
             <div class="invisible_box">
                 <div class="container">
-                    <div class="big_text">Hello!</div>
-                    <div class="prompt_text">Come and check out my work below!</div>
-                    <img src="images/other/arrow_down.png" alt="">
+                    <div class="big_text" data-aos="fade-up">Hello!</div>
+                    <div class="prompt_text" data-aos="fade-up" data-aos-delay="100" >Come and check out my work below!</div>
+                    <img src="images/other/arrow_down.png" alt="" data-aos="fade-up" data-aos-delay="200"> 
                 </div>
 
             </div>
@@ -47,11 +57,11 @@
        
         <div class="items_container">
             <a href="">
-                <div class="item">
-                    <div class="image_box">
+                <div class="item" data-aos="fade">
+                    <div class="image_box" data-aos="fade-up">
                         <img src="images/thumbnails/realtime_thumbnail.jpg" alt="">
                     </div>
-                    <div class="text_box">
+                    <div class="text_box" data-aos="fade-up">
                         <div class="title">REALTIME</div>
                         <div class="secondary_text">Compilation redefining the possibilities
                             of what electronic music can be.
@@ -64,11 +74,11 @@
             </div>
             </a>
             <a href="">
-                <div class="item">
-                    <div class="image_box">
+                <div class="item" data-aos="fade">
+                    <div class="image_box" data-aos="fade-up">
                         <img src="images/thumbnails/me_time_thumbnail.jpg" alt="">
                     </div>
-                    <div class="text_box">
+                    <div class="text_box" data-aos="fade-up">
                         <div class="title">ME TIME</div>
                         <div class="secondary_text">A pensive self-examination
                             representing undervaluation,
@@ -81,11 +91,11 @@
             </div>
             </a>
             <a href="">
-                <div class="item">
-                    <div class="image_box">
+                <div class="item" data-aos="fade" data-aos-anchor-placement="center-center">
+                    <div class="image_box" data-aos="fade-up">
                         <img src="images/thumbnails/nfg_thumbnail.jpg" alt="">
                     </div>
-                    <div class="text_box">
+                    <div class="text_box" data-aos="fade-up">
                         <div class="title">NFG</div>
                         <div class="secondary_text">The home of the 
                             deep, dark and technical.</div>
@@ -97,7 +107,7 @@
                 </div>
             </a>
         </div>
-        <div class="footer">
+        <div class="footer" data-aos="fade-right">
             <div class="text_box">
                 <div class="title">I've got more!</div>
                 <div class="secondary_text">These were some of my projects that I selected
