@@ -1,0 +1,35 @@
+            <div class="item">
+                <a href="">
+                    <div class="container">
+                        <img src="images/thumbnails/me_time_thumbnail.jpg" alt="">
+                        <div class="text_box">
+                            <div class="title">ME TIME</div>
+                            <div class="secondary_text">A pensive self-examination
+                                representing undervaluation,
+                                overthought, and dreary solitude.</div>
+                                <div class="bottom_text">
+                                    <span class="client_year">VHSCERAL 2020</span>
+                                    <span class="work_type">Cover Artwork</span>
+                                </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="">
+                    <div class="container">
+                        <div class="image_box">
+                            <img src="images/thumbnails/nfg_thumbnail.jpg" alt="">
+                        </div>
+                        <div class="text_box">
+                            <div class="title">NFG</div>
+                            <div class="secondary_text">The home of the 
+                                deep, dark and technical.</div>
+                                <div class="bottom_text">
+                                    <span class="client_year">Neurofunk Grid</span>
+                                    <span class="work_type">Visual Design</span>
+                                </div>
+                        </div>
+                    </div>
+                </a>
+            </div>

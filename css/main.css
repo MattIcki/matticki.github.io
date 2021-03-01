@@ -1,10 +1,11 @@
 :root {
-  font-family: 'Encode Sans Expanded', sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   --background_color: #EBE8D9;
   --main_color: #381FEB;
   --secondary_color: #EB3B1F;
   --gradient_color_a: #2072A1;
   --gradient_color_b: #A21212;
+  --dark_color: #1b1a19;
 }
 
 .preload {
@@ -20,8 +21,10 @@ body {
   background-color: var(--background_color);
   margin: 0;
   font-size: 9px;
-  -webkit-transition-duration: 0.15s;
-          transition-duration: 0.15s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
 }
@@ -152,7 +155,18 @@ a {
   width: 100%;
 }
 
+.items_container .item:hover .radial_gradient {
+  visibility: visible;
+}
+
+.items_container .item:hover img {
+  -webkit-transform: scale(1, 1) !important;
+          transform: scale(1, 1) !important;
+}
+
 .items_container .item {
+  position: relative;
+  overflow: hidden;
   border: 3px var(--main_color) solid;
   border-style: solid;
   border-left: none;
@@ -163,6 +177,18 @@ a {
   -webkit-transition: ease-in-out 0.15s;
   transition: ease-in-out 0.15s;
   text-align: center;
+}
+
+.items_container .item .radial_gradient {
+  visibility: hidden;
+  z-index: -3;
+  position: absolute;
+  height: 100em;
+  width: 100em;
+  -webkit-transform: translate(-50em, -50em);
+          transform: translate(-50em, -50em);
+  background: #9b59b6;
+  background: radial-gradient(at center, var(--main_color), transparent, transparent);
 }
 
 .items_container .item a {
@@ -183,6 +209,12 @@ a {
   margin: 2em auto;
   width: 100%;
   max-width: 330px;
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 
 .items_container .item .container .text_box {

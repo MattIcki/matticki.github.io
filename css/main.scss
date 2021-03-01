@@ -1,10 +1,11 @@
 :root{
-    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: "Encode Sans Expanded", sans-serif;
     --background_color: #EBE8D9;
     --main_color: #381FEB;
     --secondary_color: #EB3B1F;
     --gradient_color_a: #2072A1;
     --gradient_color_b: #A21212;
+    --dark_color: #1b1a19;
 }
 
 .preload{
@@ -23,7 +24,8 @@ body{
     background-color: var(--background_color);
     margin: 0;
     font-size: 9px;
-    transition-duration: 0.15s;
+    transition-duration: 0.2s;
+    transition-delay: 0.1s;
     transition-timing-function: ease-in-out;
 }
 
@@ -135,7 +137,30 @@ a{
 
 .items_container{
     width: 100%;
+
+    .item:hover .radial_gradient{
+        visibility: visible;
+    }
+    .item:hover img{
+        transform: scale(1, 1) !important;
+    }
     .item{
+        position: relative;
+        overflow: hidden;
+
+        .radial_gradient{
+            visibility: hidden;
+            z-index: -3;
+            position:absolute;
+            height:100em;
+            width:100em;
+            transform: translate(-50em, -50em);
+            background: #9b59b6;
+            background: 
+              radial-gradient(
+               at center, var(--main_color), transparent, transparent
+              );
+        }
         a{
             text-decoration: none;
             color: var(--main_color)
@@ -159,6 +184,9 @@ a{
                 margin: 2em auto;
                 width: 100%;
                 max-width: 330px;
+                transform: scale(0.9, 0.9);
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in-out;
             }
             .text_box{
                 max-width: 330px;
@@ -188,6 +216,8 @@ a{
         border-color: var(--secondary_color);
         transition-timing-function: ease-in-out;
     }
+
+
 }
 
 .footer{
