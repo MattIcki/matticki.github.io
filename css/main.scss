@@ -1,10 +1,14 @@
 :root{
     font-family: "Encode Sans Expanded", sans-serif;
-    --background_color: #EBE8D9;
+    --background_color: #ffffff;
     --main_color: #381FEB;
     --secondary_color: #EB3B1F;
+    --secondary_color50: #EB3B1F44;
     --gradient_color_a: #2072A1;
     --gradient_color_b: #A21212;
+    --gradient_color_a: #EB3B1F;
+    --gradient_color_b: transparent;
+    --gradient_color_c: transparent;
     --dark_color: #1b1a19;
 }
 
@@ -42,6 +46,7 @@ a{
 }
 
 .navbar{
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
@@ -75,17 +80,40 @@ a{
 
 .top_container{
     position: relative;
-    z-index: -1;
+    z-index: 0;
     display: grid;
     grid-template-rows: 410px auto;
     width: 100%;
     margin-bottom: 10em;
     .gradient_box{
         background-image: linear-gradient(to bottom right,
-            var(--gradient_color_a), var(--gradient_color_b)
+            var(--gradient_color_a), var(--gradient_color_b) , var(--gradient_color_c)
         );
         position: relative;
+        canvas{
+            z-index: -1;
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+        .square_container{
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
+            width: 100%;
+            height: 100%;
+        }
 
+        .square_container2{
+            position: absolute;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+            width: 100%;
+            height: 100%;
+            .main_square_box{
+                border-radius: 1em;
+                box-shadow: 0px 0px 0px 2em var(--main_color) ;
+            }
+        }
         .main_square_box{
             bottom: -4em;
             left: 50%;
@@ -97,6 +125,18 @@ a{
             max-height: 330px;
             background-color: var(--main_color);
             color: var(--background_color);
+            box-shadow: 0em 3em 10em 2em var(--main_color) ;
+
+            img{
+                border-radius: 10em;
+                opacity: 0%;
+                z-index: 1;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transition-duration: 0.3s;
+            }
+
             .text_container{
                 padding: 2em;
                 margin: 50% auto;
@@ -112,8 +152,12 @@ a{
             }
         
         }
-    }
+        .main_square_box:hover img{
+            opacity: 100%;
+        }
 
+
+    }
     .invisible_box{
         .container{
             margin-top: 12em;
@@ -122,7 +166,8 @@ a{
             .big_text{
                 font-size: 9em;
                 font-weight: bold;
-                color: var(--main_color)
+                color: var(--main_color);
+
             }
             .prompt_text{
                 color: var(--main_color);
@@ -137,7 +182,10 @@ a{
 
 .items_container{
     width: 100%;
-
+    
+    .item_perspective{
+        perspective: 100px;
+    }
     .item:hover .radial_gradient{
         visibility: visible;
     }
@@ -145,6 +193,10 @@ a{
         transform: scale(1, 1) !important;
     }
     .item{
+        
+        transition-duration: 0 !important;
+        transition-delay: 0 !important;
+        transition-timing-function: linear !important;
         position: relative;
         overflow: hidden;
 
@@ -187,6 +239,7 @@ a{
                 transform: scale(0.9, 0.9);
                 transition-duration: 0.5s;
                 transition-timing-function: ease-in-out;
+                border-radius: 1em;
             }
             .text_box{
                 max-width: 330px;
@@ -215,6 +268,7 @@ a{
         color: var(--secondary_color);
         border-color: var(--secondary_color);
         transition-timing-function: ease-in-out;
+        box-shadow: 0em 2em 5em 0em var(--secondary_color50);
     }
 
 
@@ -260,7 +314,7 @@ a{
 
 @media only screen and (min-width: 300px){
     .big_text{
-        font-size: 9em !important;
+        font-size: 9em;
     }
 }
 
@@ -324,6 +378,7 @@ a{
         margin-right: 7vw;
         border-right-style: solid !important;
         border-left-style: solid !important;
+        border-radius: 1em;
         .container{
             height: 34em;
             img{
@@ -408,16 +463,4 @@ a{
         margin-right: 15vw;    
     }
     
-}
-
-@media only screen and (min-width: 1750px){
-    body{
-        font-size: 0.7vw;
-    }
-}
-
-@media only screen and (min-width: 1750px){
-    body{
-        font-size: 0.7vw;
-    }
 }

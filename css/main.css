@@ -1,10 +1,14 @@
 :root {
   font-family: "Encode Sans Expanded", sans-serif;
-  --background_color: #EBE8D9;
+  --background_color: #ffffff;
   --main_color: #381FEB;
   --secondary_color: #EB3B1F;
+  --secondary_color50: #EB3B1F44;
   --gradient_color_a: #2072A1;
   --gradient_color_b: #A21212;
+  --gradient_color_a: #EB3B1F;
+  --gradient_color_b: transparent;
+  --gradient_color_c: transparent;
   --dark_color: #1b1a19;
 }
 
@@ -43,6 +47,7 @@ a {
 }
 
 .navbar {
+  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
@@ -86,7 +91,7 @@ a {
 
 .top_container {
   position: relative;
-  z-index: -1;
+  z-index: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 410px auto;
@@ -96,9 +101,41 @@ a {
 }
 
 .top_container .gradient_box {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--gradient_color_a)), to(var(--gradient_color_b)));
-  background-image: linear-gradient(to bottom right, var(--gradient_color_a), var(--gradient_color_b));
+  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--gradient_color_a)), color-stop(var(--gradient_color_b)), to(var(--gradient_color_c)));
+  background-image: linear-gradient(to bottom right, var(--gradient_color_a), var(--gradient_color_b), var(--gradient_color_c));
   position: relative;
+}
+
+.top_container .gradient_box canvas {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.top_container .gradient_box .square_container {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  width: 100%;
+  height: 100%;
+}
+
+.top_container .gradient_box .square_container2 {
+  position: absolute;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  width: 100%;
+  height: 100%;
+}
+
+.top_container .gradient_box .square_container2 .main_square_box {
+  border-radius: 1em;
+  -webkit-box-shadow: 0px 0px 0px 2em var(--main_color);
+          box-shadow: 0px 0px 0px 2em var(--main_color);
 }
 
 .top_container .gradient_box .main_square_box {
@@ -113,6 +150,19 @@ a {
   max-height: 330px;
   background-color: var(--main_color);
   color: var(--background_color);
+  -webkit-box-shadow: 0em 3em 10em 2em var(--main_color);
+          box-shadow: 0em 3em 10em 2em var(--main_color);
+}
+
+.top_container .gradient_box .main_square_box img {
+  border-radius: 10em;
+  opacity: 0%;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .top_container .gradient_box .main_square_box .text_container {
@@ -130,6 +180,10 @@ a {
 
 .top_container .gradient_box .main_square_box .text_container .secondary_text {
   font-size: 1em;
+}
+
+.top_container .gradient_box .main_square_box:hover img {
+  opacity: 100%;
 }
 
 .top_container .invisible_box .container {
@@ -155,6 +209,11 @@ a {
   width: 100%;
 }
 
+.items_container .item_perspective {
+  -webkit-perspective: 100px;
+          perspective: 100px;
+}
+
 .items_container .item:hover .radial_gradient {
   visibility: visible;
 }
@@ -165,6 +224,12 @@ a {
 }
 
 .items_container .item {
+  -webkit-transition-duration: 0 !important;
+          transition-duration: 0 !important;
+  -webkit-transition-delay: 0 !important;
+          transition-delay: 0 !important;
+  -webkit-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
   position: relative;
   overflow: hidden;
   border: 3px var(--main_color) solid;
@@ -215,6 +280,7 @@ a {
           transition-duration: 0.5s;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
+  border-radius: 1em;
 }
 
 .items_container .item .container .text_box {
@@ -246,6 +312,8 @@ a {
   border-color: var(--secondary_color);
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
+  -webkit-box-shadow: 0em 2em 5em 0em var(--secondary_color50);
+          box-shadow: 0em 2em 5em 0em var(--secondary_color50);
 }
 
 .footer {
@@ -297,7 +365,7 @@ a {
 
 @media only screen and (min-width: 300px) {
   .big_text {
-    font-size: 9em !important;
+    font-size: 9em;
   }
 }
 
@@ -351,6 +419,7 @@ a {
     margin-right: 7vw;
     border-right-style: solid !important;
     border-left-style: solid !important;
+    border-radius: 1em;
   }
   .item .container {
     height: 34em;
@@ -428,18 +497,6 @@ a {
   .footer {
     margin-left: 15vw;
     margin-right: 15vw;
-  }
-}
-
-@media only screen and (min-width: 1750px) {
-  body {
-    font-size: 0.7vw;
-  }
-}
-
-@media only screen and (min-width: 1750px) {
-  body {
-    font-size: 0.7vw;
   }
 }
 /*# sourceMappingURL=main.css.map */

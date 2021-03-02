@@ -4,13 +4,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width="device-width", initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Matt Iwicki</title>
     <link rel="stylesheet" href="css/main.css?v=3">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body class="preload">
-
     <div class="main_container">
         <div class="navbar">
             <a href="index.html" class="logo">Matt Iwicki</a>
@@ -20,21 +19,27 @@
                 <a href="">Contact</a>
                 <a href="">Other Projects</a>
             </div>
-    
-    
         </div>
         <div class="top_container">
             <div class="gradient_box">
-                <div class="main_square_box">
-                    <div class="text_container">
-                        <div class="main_text">Hi! My name is Matt.
-                            I mainly design album
-                            covers, but also venture
-                            out to create all kinds
-                            of audio/visual experiences.</div>
-                        <div class="secondary_text">I also love experimental music, game design and my gf &lt;3</div>
+                <canvas></canvas>
+                <div class="square_container2">
+                    <div class="main_square_box">
                     </div>
-        
+                </div>
+                <div class="square_container">
+                    <div class="main_square_box">
+                        <img src="images/other/me.png" alt="">
+                        <div class="text_container">
+                            <div class="main_text">Hi! My name is Matt.
+                                I mainly design album
+                                covers, but also venture
+                                out to create all kinds
+                                of audio/visual experiences.</div>
+                            <div class="secondary_text">I also love experimental music, game design and my gf &lt;3</div>
+                        </div>
+            
+                    </div>
                 </div>
             </div>
             <div class="invisible_box">
@@ -46,9 +51,8 @@
 
             </div>
         </div>
-       
         <div class="items_container">
-            
+            <div class="item_perspective">
             <div class="item">
                 <a href="">
                     <div class="container">
@@ -69,43 +73,51 @@
                     </div>
                 </a>
             </div>
-            <div class="item">
-                <a href="">
-                    <div class="container">
-                        <div class="radial_gradient"></div>
-                        <img src="images/thumbnails/me_time_thumbnail.jpg" alt="">
-                        <div class="text_box">
-                            <div class="title">ME TIME</div>
-                            <div class="secondary_text">A pensive self-examination
-                                representing undervaluation,
-                                overthought, and dreary solitude.</div>
-                                <div class="bottom_text">
-                                    <span class="client_year">VHSCERAL 2020</span>
-                                    <span class="work_type">Cover Artwork</span>
-                                </div>
-                        </div>
-                    </div>
-                </a>
             </div>
-            <div class="item">
-                <a href="">
-                    <div class="container">
-                        <div class="radial_gradient"></div>
-                        <div class="image_box">
-                            <img src="images/thumbnails/nfg_thumbnail.jpg" alt="">
+
+            <div class="item_perspective">
+                <div class="item">
+                    <a href="">
+                        <div class="container">
+                            <div class="radial_gradient"></div>
+                            <img src="images/thumbnails/me_time_thumbnail.jpg" alt="">
+                            <div class="text_box">
+                                <div class="title">ME TIME</div>
+                                <div class="secondary_text">A pensive self-examination
+                                    representing undervaluation,
+                                    overthought, and dreary solitude.</div>
+                                    <div class="bottom_text">
+                                        <span class="client_year">VHSCERAL 2020</span>
+                                        <span class="work_type">Cover Artwork</span>
+                                    </div>
+                            </div>
                         </div>
-                        <div class="text_box">
-                            <div class="title">NFG</div>
-                            <div class="secondary_text">The home of the 
-                                deep, dark and technical.</div>
-                                <div class="bottom_text">
-                                    <span class="client_year">Neurofunk Grid</span>
-                                    <span class="work_type">Visual Design</span>
-                                </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
+
+            <div class="item_perspective">
+                <div class="item">
+                    <a href="">
+                        <div class="container">
+                            <div class="radial_gradient"></div>
+                            <div class="image_box">
+                                <img src="images/thumbnails/nfg_thumbnail.jpg" alt="">
+                            </div>
+                            <div class="text_box">
+                                <div class="title">NFG</div>
+                                <div class="secondary_text">The home of the 
+                                    deep, dark and technical.</div>
+                                    <div class="bottom_text">
+                                        <span class="client_year">Neurofunk Grid</span>
+                                        <span class="work_type">Visual Design</span>
+                                    </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
 
         </div>
         <div class="footer">
@@ -124,28 +136,57 @@
         </div>
     </div>
     <script>
+
+
+
+
         $(".item").hover(function(){
             elementX = $(this).find("a").offset().left;
             elementY = $(this).find("a").offset().top;
 
-            $("body").css("background-color", "var(--dark_color)")
-
+            $("body").css("background-color", "var(--dark_color)");
+            
+            var current_item = $(this).get(0)
+            var this_item = $(this)
+            var current_parent = current_item.parentElement
+            var this_parent = $(this).parent()
+            current_item.classList.add("rotable")
+            //$(this).css("background-color", "red")
             $(document).mousemove(function(event) {
                 
+                var child_offset = current_parent.offsetTop - current_item.offsetTop
+
                 mouseX = event.pageX - elementX;
                 mouseY = event.pageY - elementY;
-                
+                mouseXPerc = ((event.pageX - (3 * this_item.offset().left)) / current_parent.offsetWidth * 100)
+                mouseYPerc = ((event.pageY - (1 * this_item.offset().top)) / current_parent.offsetHeight * 100) - 50
+
+
+                $(".rotable").css("transform", "rotateY(" + -mouseXPerc * 0.01  + "deg) rotateX(" + mouseYPerc *0.01 +"deg) scale(1.01, 1.01)")
                 $(".radial_gradient").css("top", mouseY +"px");
                 $(".radial_gradient").css("left", mouseX + "px");
             });
-
         },function(){
             $("body").css("background-color", "var(--background_color)")
+            $(this).css("transform", "none")
+            $(this).get(0).classList.remove("rotable")
         })
 
+        $(window).on("mousemove", function(event){
+
+            mouseX = (event.pageX - 20 *$(".square_container").offset().left) / window.innerWidth;
+            mouseY = (event.pageY - 20 *$(".square_container").offset().top) / window.innerHeight;
+
+            mouseX2 = (event.pageX - 20*($(".square_container2").offset().left * 2)) / window.innerWidth;
+            mouseY2 = (event.pageY - 20*($(".square_container2").offset().top) * 2) / window.innerHeight;
+
+            $(".square_container").css("transform","translate("+ mouseX * 5 +"%, " + mouseY * 5 + "%)");
+            $(".square_container2").css("transform","translate("+ mouseX2 * 5 +"%, " + mouseY2 * 5 + "%)");
+        })
         $(window).load(function() {
             $("body").removeClass("preload");
             });
+
     </script>
 </body>
 </html>
