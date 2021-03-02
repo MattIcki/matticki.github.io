@@ -149,9 +149,13 @@
             var current_item = $(this).get(0)
             var this_item = $(this)
             var current_parent = current_item.parentElement
-            var this_parent = $(this).parent()
-            current_item.classList.add("rotable")
-            //$(this).css("background-color", "red")
+            if(current_item.classList.contains("rotable") == false){
+                current_item.classList.add("rotable")
+            }
+            else{
+                current_item.classList.remove("rotable")
+            }
+            
             $(document).mousemove(function(event) {
                 
                 var child_offset = current_parent.offsetTop - current_item.offsetTop
@@ -169,7 +173,10 @@
         },function(){
             $("body").css("background-color", "var(--background_color)")
             $(this).css("transform", "none")
+
             $(this).get(0).classList.remove("rotable")
+
+            
         })
 
         $(window).on("mousemove", function(event){
