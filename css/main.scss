@@ -12,13 +12,7 @@
     --dark_color: #1b1a19;
 }
 
-.preload{
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -ms-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
-}
+
 
 img{
     max-width: 100%;
@@ -31,6 +25,19 @@ body{
     transition-duration: 0.2s;
     transition-delay: 0.1s;
     transition-timing-function: ease-in-out;
+}
+
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+.preload{
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
 a{
@@ -193,10 +200,9 @@ a{
         transform: scale(1, 1) !important;
     }
     .item{
-        
-        transition-duration: 0 !important;
-        transition-delay: 0 !important;
-        transition-timing-function: linear !important;
+        transition-duration: 0;
+        transition-delay: 0;
+        transition-timing-function: linear;
         position: relative;
         overflow: hidden;
 
